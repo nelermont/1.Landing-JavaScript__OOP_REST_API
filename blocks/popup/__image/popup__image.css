@@ -1,0 +1,13 @@
+
+  .popup__image-open {
+    max-width: 80vw;
+    max-height: 80vh;
+   
+  }
+
+  .popup__image-close {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: -30px;
+  }
