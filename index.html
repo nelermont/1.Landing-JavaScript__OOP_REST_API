@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
   <div class="root">
     <header class="header root__section">
       <img src="./images/logo.svg" alt="mesto logo" class="logo">
@@ -18,61 +19,84 @@
       <div class="user-info">
         <div class="user-info__photo"></div>
         <div class="user-info__data">
-          <h1 class="user-info__name">Jaques Causteau</h1>
-          <p class="user-info__job">Sailor, Researcher</p>
+          <h1 class="user-info__name"> </h1>
+          <p class="user-info__job"> </p>
 
           <button class="button button_edit user-info__edit">Edit</button>
         </div>
         <button class="button user-info__button">+</button>
       </div>
     </div>
-    <div class="places-list root__section">
 
-    </div>
-    <div class="popup">
+    
+
+      <div class="places-list root__section">
+      
+  
+
+    <template id="card-template">
+      <div class="place-card" id="place-card__id" >
+        <div class="place-card__image">
+          <button class="place-card__delete-icon"></button>
+        </div>
+        <div class="place-card__description">
+          <h3 class="place-card__name"></h3>
+          <div class="place-card__like">
+          <button class="place-card__like-icon"></button>
+          <span class="place-card__like-number"></span></div>
+        </div>
+      </div>
+    </template>
+  </div>
+
+    <div class="popup" id="popup-place">
       <div class="popup__content">
-        <img src="./images/close.svg" alt="" class="popup__close">
+        <img src="./images/close.svg" alt="" class="popup__close" id="popupClose">
         <h3 class="popup__title">Новое место</h3>
         <form class="popup__form" name="new" id="new" novalidate>
-
           <input type="text" name="name" id="name" class="popup__input" placeholder="Название" required minlength="2"
             maxlength="30">
           <span id="name-error" class="error__message"></span>
-          <input type="url" name="link" id="link" class="popup__input" placeholder="Ссылка на картинку" required
+          <input type="url" name="link" id="link" class="popup__input" pattern="https?://.+" placeholder="Ссылка на картинку" required
             minlength="2">
           <span id="link-error" class="error__message"></span>
-          <button type="submit" id="submit" class="button popup__button popup__button_disabled">+</button>
+          <button type="submit" id="submit" class="button popup__button ">+</button>
         </form>
       </div>
     </div>
-    <div class="popup" id="popup-edit">
+
+    <div class="popup popup__edit" id="popup-edit">
       <div class="popup__content">
         <img src="./images/close.svg" alt="" class="popup__close" id="popup-edit-close">
         <h3 class="popup__title">Редактировать профиль</h3>
         <form class="popup__form" name="userEdit" id="form-edit" novalidate>
-
-          <input type="text" id="user" class="popup__input popup__input_type_user" minlength="2" maxlength="30"
-            required>
+          <input type="text" id="user" class="popup__input popup__input_type_user" placeholder="Имя" minlength="2"
+            maxlength="30" required novalidate>
           <span id="user-error" class="error__message"></span>
-          <input type="text" id="info" class="popup__input popup__input_type_info" minlength="2" maxlength="30"
-            required>
+          <input type="text" id="info" class="popup__input popup__input_type_info" placeholder="Профессия" minlength="2"
+            maxlength="30" required>
           <span id="info-error" class="error__message"></span>
-          <button type="submit" id="submit"
-            class="button popup__button popup__button_edit popup__button_disabled">Сохранить</button>
+          <button type="submit" id="submit-edit" class="button popup__button popup__button_edit">Сохранить</button>
         </form>
       </div>
     </div>
+
+
     <div class="popup" id="popup-image">
       <div class="popup__image">
-        <img src="./images/close.svg" alt="" class="popup__image-close">
-        <img src=" " alt="" class="popup__image-open">
+        <img src="./images/close.svg" alt="" id="popup-img-close" class="popup__close popup__close_img">
+        <img src=" " alt="" class="popup__image-open" id="image-open">
       </div>
     </div>
   </div>
-  <script src="iCard.js">
-  </script>
-  <script src="script.js">
-  </script>
+  <script src="Api.js"></script>
+  <script src="FormValidator.js"></script>
+  <script src="Card.js"></script>
+  <script src="CardList.js"></script>
+  <script src="UserInfo.js"></script>
+   <script src="Popup.js"></script>
+  <script src="ImgPopup.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
